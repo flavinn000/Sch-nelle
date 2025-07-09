@@ -1,0 +1,170 @@
+# Criar os arquivos base do site: index.html, style.css e um exemplo de estrutura de pastas.
+site_files = {
+    "index.html": """
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schönelle Joias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Schönelle</h1>
+        <nav>
+            <ul>
+                <li><a href="#colares">Colares</a></li>
+                <li><a href="#pulseiras">Pulseiras</a></li>
+                <li><a href="#aneis">Anéis</a></li>
+                <li><a href="#brincos">Brincos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Joias com elegância atemporal</h2>
+        <p>Explore peças únicas em prata e dourado</p>
+    </section>
+
+    <section id="colares" class="categoria">
+        <h3>Colares</h3>
+        <div class="subcategoria">
+            <h4>Prata</h4>
+            <div class="produtos"></div>
+        </div>
+        <div class="subcategoria">
+            <h4>Dourado</h4>
+            <div class="produtos"></div>
+        </div>
+    </section>
+
+    <section id="pulseiras" class="categoria">
+        <h3>Pulseiras</h3>
+        <div class="subcategoria">
+            <h4>Prata</h4>
+            <div class="produtos"></div>
+        </div>
+        <div class="subcategoria">
+            <h4>Dourado</h4>
+            <div class="produtos"></div>
+        </div>
+    </section>
+
+    <section id="aneis" class="categoria">
+        <h3>Anéis</h3>
+        <div class="subcategoria">
+            <h4>Prata</h4>
+            <div class="produtos"></div>
+        </div>
+        <div class="subcategoria">
+            <h4>Dourado</h4>
+            <div class="produtos"></div>
+        </div>
+    </section>
+
+    <section id="brincos" class="categoria">
+        <h3>Brincos</h3>
+        <div class="subcategoria">
+            <h4>Prata</h4>
+            <div class="produtos"></div>
+        </div>
+        <div class="subcategoria">
+            <h4>Dourado</h4>
+            <div class="produtos"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Schönelle Joias. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+""",
+    "style.css": """
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #fffdfa;
+    color: #333;
+}
+
+header {
+    background-color: #f4e3c1;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #9c7b4d;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5f4b32;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #fff5e6;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.categoria {
+    padding: 30px 20px;
+}
+
+.categoria h3 {
+    color: #9c7b4d;
+    border-bottom: 1px solid #ccc;
+}
+
+.subcategoria {
+    margin-top: 15px;
+}
+
+.subcategoria h4 {
+    margin-bottom: 10px;
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer {
+    background-color: #f4e3c1;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+"""
+}
+
+# Salvar os arquivos no diretório temporário
+import os
+
+base_path = "/mnt/data/schonelle_site"
+os.makedirs(base_path, exist_ok=True)
+
+for filename, content in site_files.items():
+    with open(os.path.join(base_path, filename), "w", encoding="utf-8") as f:
+        f.write(content)
+
+base_path
